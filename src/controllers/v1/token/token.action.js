@@ -24,7 +24,7 @@ exports.token = async (req, res) => {
 
         const user = Object.assign({}, data, {
             id: md5(data.username),
-            role: 'admin',
+            role: data.role,
             image: `https://ui-avatars.com/api/?name=${data.username}&size=192&background=000000&color=6E7FFE&length=1`,
         });
         const token = client.createToken(user.id);
