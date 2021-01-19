@@ -21,6 +21,10 @@ exports.token = async (req, res) => {
         }
 
         const client = new StreamChat(apiKey, apiSecret);
+		
+		if(!data.role){
+			data.role="user";
+		}
 
         const user = Object.assign({}, data, {
             id: md5(data.username),
