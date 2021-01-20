@@ -31,7 +31,7 @@ exports.token = async (req, res) => {
 			username: data.email,
 			name: data.name,
             role: data.role,
-            image: `https://ui-avatars.com/api/?name=${data.username}&size=192&background=000000&color=6E7FFE&length=1`,
+            image: `https://ui-avatars.com/api/?name=${data.email}&size=192&background=000000&color=6E7FFE&length=1`,
         });
         const token = client.createToken(user.id);
         await client.updateUsers([user]);
